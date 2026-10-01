@@ -1,4 +1,5 @@
 from flask import Flask, request
+import flask_cors
 import requests
 
 app = Flask(__name__)
@@ -14,4 +15,5 @@ def post(url):
     return response.text
 
 if __name__ == '__main__':
+    flask_cors.CORS(app)
     app.run()
